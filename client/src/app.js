@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'babel-polyfill';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import ContactForm from './components/ContactForm'

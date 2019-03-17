@@ -2,8 +2,8 @@ import React,{Component} from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import axios from 'axios';
 class ContactForm extends Component {
-    constructor (props){
-      super(props);
+    constructor (){
+      super();
       this.state={
           name:"",
           email:"",
@@ -14,10 +14,11 @@ class ContactForm extends Component {
         this.setState({ [e.target.name]: e.target.value})
       }
 
-      handleSubmit = e => {
+      handleSubmit = async e => {
+          //console.log("submit event");
         e.preventDefault();
         const {name, email, message} = this.state;
-        const form = await axios.post('/api/form',{
+        const form = await axios.post('http://localhost:8081/api/form',{
             name,
             email, 
             message
